@@ -1,5 +1,4 @@
 import Category from "../components/Category";
-import '../index.scss'
 
 const Home = () => {
   const categories = [
@@ -33,9 +32,7 @@ const Home = () => {
 
 
   return (
-    <div className="container">
-      <Category categories={categories} />
-    </div>
+    <Category categories={categories} />
   );
 }
 export default Home
