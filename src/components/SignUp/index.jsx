@@ -3,9 +3,9 @@ import { useState } from "react"
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils"
 
 import FormImput from "../Form-input"
+import Button from "../Button"
 
 import "./sign-up.scss"
-import Button from "../Button"
 
 const userData = {
   displayName: '',
@@ -16,8 +16,6 @@ const userData = {
 
 const SignUp = () => {
 const [ formData, setformData ] = useState(userData)
-
-console.log(formData)
 
 const { displayName, email, password, confirmPassword } = formData
 
@@ -37,9 +35,13 @@ const handleSubmit = async (e) => {
   try {
     const { user } = await createAuthUserWithEmailAndPassword(email, password)
     await createUserDocumentFromAuth(user, {displayName})
-    setformData({displayName: '', email: '', password: '', confirmPassword: ''})
+    setformData(userData)
   } catch(error) {
-    console.log('User Creation enconter an error', error.message)
+    if (error.code === 'auth/email-already-in-use'){
+      alert('E-mail already exists')
+    } else {
+      console.log('User Creation enconter an error', error.message)
+    }
   }
 
 }
