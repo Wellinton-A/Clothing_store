@@ -2,13 +2,18 @@ import { Link } from "react-router-dom"
 import { useContext } from "react"
 
 import { ReactComponent as StoreLogo } from "../../assets/crown.svg"
-import { userContext } from "../../context"
+import { userContext } from "../../context/user-context"
+import { CartContext } from "../../context/cart-context"
 import { signOutUser } from "../../utils/firebase/firebase.utils"
+
+import CardIcon from "../Cart-Icon"
+import CartDropdown from "../Cart-dropdown"
 
 import './nav-bar.scss'
 
 const Navbar = () => {
-  const { currentUser, setCurrentUser } = useContext(userContext)
+  const { currentUser } = useContext(userContext)
+  const { showDropdown } = useContext(CartContext)
   // console.log('current user:', currentUser)
 
   return (
@@ -28,7 +33,13 @@ const Navbar = () => {
             SIGN IN
           </Link>
           )}
+          <CardIcon />
         </div>
+        {
+        showDropdown &&(
+          <CartDropdown />
+        )
+      }
       </div>
     </header>
   )

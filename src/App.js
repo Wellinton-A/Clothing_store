@@ -3,15 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./routes/home";
 import Navigationbar from "./routes/navbar";
 import SignInRoute from "./routes/signIn";
+import Shop from "./routes/shop";
 
 import './index.scss'
-
-const Shop = () => {
-  return (
-    <h1>Welcome to the Candy Shop</h1>
-  )
-}
-
 
 const App = () => {
   return (
