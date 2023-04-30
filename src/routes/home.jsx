@@ -29,8 +29,6 @@ const Home = () => {
     }
   ]
 
-
-
   return (
     <Category categories={categories} />
   );

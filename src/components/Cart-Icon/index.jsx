@@ -7,6 +7,7 @@ import './cart-icon.scss'
 
 const  CardIcon = () => {
   const { showDropdown, setShowDropdown } = useContext(CartContext)
+  const { quantItemCart } = useContext(CartContext)
 
   const toggleCart = () => {
     setShowDropdown(!showDropdown)
@@ -15,7 +16,7 @@ const  CardIcon = () => {
   return (
     <div onClick={toggleCart} className="cart-icon-container">
       <CartIconSVG className="shopping-icon" />
-      <span className="item-count">0</span>
+      <span className="item-count">{ quantItemCart }</span>
     </div>
   )
 }
