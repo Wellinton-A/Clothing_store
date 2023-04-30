@@ -6,6 +6,7 @@ import SignInRoute from "./routes/signIn";
 import Shop from "./routes/shop";
 
 import './index.scss'
+import CheckoutPage from "./routes/checkout";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/sign-in" element={<SignInRoute />} />
+          <Route path="/checkout" element={<CheckoutPage />}/>
         </Route>
       </Routes>
     </div>
