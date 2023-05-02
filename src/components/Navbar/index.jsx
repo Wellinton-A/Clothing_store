@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { useContext } from "react"
 
 import { ReactComponent as StoreLogo } from "../../assets/crown.svg"
@@ -9,38 +8,43 @@ import { signOutUser } from "../../utils/firebase/firebase.utils"
 import CardIcon from "../Cart-Icon"
 import CartDropdown from "../Cart-dropdown"
 
-import './nav-bar.scss'
+import {
+  LogoContainer,
+  NavLink,
+  NavLinksContainer,
+  NavSignOut,
+  Navigation
+} from "./nav-bar.js"
 
 const Navbar = () => {
   const { currentUser } = useContext(userContext)
   const { showDropdown } = useContext(CartContext)
-  // console.log('current user:', currentUser)
 
   return (
     <header>
-      <div className="navigation">
-        <Link logo-container="logo-container" to='/'>
+      <Navigation>
+        <LogoContainer to='/'>
           <StoreLogo className="logo" />
-        </Link>
-        <div className="nav-links-container">
-          <Link className="nav-link" to='/shop'>
+        </LogoContainer>
+        <NavLinksContainer>
+          <NavLink to='/shop'>
             SHOP
-          </Link>
-          {currentUser ? (<span onClick={signOutUser} className="nav-link" >
+          </NavLink>
+          {currentUser ? (<NavSignOut onClick={signOutUser} className="nav-link" >
             SIGN OUT
-          </span>) : (
-            <Link className="nav-link" to='/sign-in'>
+          </NavSignOut>) : (
+            <NavLink className="nav-link" to='/sign-in'>
             SIGN IN
-          </Link>
+          </NavLink>
           )}
           <CardIcon />
-        </div>
+        </NavLinksContainer>
         {
         showDropdown &&(
           <CartDropdown />
         )
       }
-      </div>
+      </Navigation>
     </header>
   )
 }

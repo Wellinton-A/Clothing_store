@@ -1,14 +1,14 @@
-import './form-input.scss'
+import { FormImputLab, Group } from './form-input.js'
 
 const FormImput = ({ label, ...otherProps }) => {
 
   return (
-    <div className="group">
-      <input className="form-input" {...otherProps} />
+    <Group>
+      <FormImputLab {...otherProps} />
       {label && (
       <label className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}>{ label }</label>
       )}
-    </div>
+    </Group>
   )
 }
 

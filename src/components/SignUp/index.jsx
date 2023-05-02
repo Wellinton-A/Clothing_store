@@ -5,7 +5,7 @@ import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "
 import FormImput from "../Form-input"
 import Button from "../Button"
 
-import "./sign-up.scss"
+import { SignUpContainer } from "./sign-up.js"
 
 const userData = {
   displayName: '',
@@ -48,7 +48,7 @@ const handleSubmit = async (e) => {
 
 
   return(
-    <div className="sign-up-container">
+    <SignUpContainer>
       <h2>Don't have an account?</h2>
       <span>Sign Up with email and password</span>
       <form onSubmit={handleSubmit}>
@@ -58,7 +58,7 @@ const handleSubmit = async (e) => {
         <FormImput label={'Confirm Password'} onChange={handleChange} required type="password" name="confirmPassword" value={confirmPassword}/>
         <Button type="submit">Sign Up</Button>
       </form>
-    </div>
+    </SignUpContainer>
   )
 }
 

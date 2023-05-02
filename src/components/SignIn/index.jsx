@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
-import Button from '../Button';
+import Button, { BUTTON_TYPE } from '../Button';
 import SignUp from '../SignUp';
 import FormImput from '../Form-input';
 import { signInWithGooglePopup, signInAuthWithEmailAndPassword } from '../../utils/firebase/firebase.utils'
 
-import './sign-in.scss'
+import './sign-in.js'
+import { AuthenticationContainer, ButtonsContainer, SignInContainer } from './sign-in.js';
 
 const formData = {
   email: '',
@@ -45,21 +46,21 @@ const SignIn = () => {
   }
 
   return (
-      <div className='authentication-container'>
-        <div className='sign-in-container'>
+      <AuthenticationContainer>
+        <SignInContainer>
           <h2>Already have an account?</h2>
           <span>Sign in with your email and password</span>
           <form onSubmit={logIn}>
           <FormImput required type='email' onChange={handleChage} name='email' value={email} label={'Email'} />
           <FormImput required type='password' onChange={handleChage} name='password' value={password} label={'Password'}/>
-          <div className='buttons-container'>
+          <ButtonsContainer>
             <Button type='submit'>Sign In</Button>
-            <Button type='button' buttonType='google' onClick={logGoogleUser}>Sign In with Google</Button>
-          </div>
+            <Button type='button' buttonType={BUTTON_TYPE.google} onClick={logGoogleUser}>Sign In with Google</Button>
+          </ButtonsContainer>
           </form>
-        </div>
+        </SignInContainer>
         <SignUp />
-      </div>
+      </AuthenticationContainer>
   )
 }
 

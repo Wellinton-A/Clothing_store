@@ -8,21 +8,20 @@ import UserProvider from './context/user-context';
 import CategoriesProvider from './context/product-context';
 import CartProvider from './context/cart-context';
 
-import './index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <CategoriesProvider>
-        <UserProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </UserProvider>
-      </CategoriesProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+    <React.StrictMode>
+      <BrowserRouter>
+        <CategoriesProvider>
+          <UserProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </UserProvider>
+        </CategoriesProvider>
+      </BrowserRouter>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

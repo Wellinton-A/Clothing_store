@@ -1,17 +1,17 @@
-import './cart-item.scss'
+import { CartItemContainer, ItemDetails, Name } from "./cart-item"
 
 const CartItem = ({products}) => {
   return (
     <div>
-      {products.map(({ id, name, quantity, imageUrl, price}) => <div key={id} className='cart-item-container'>
+      {products.map(({ id, name, quantity, imageUrl, price}) => <CartItemContainer key={id} className='cart-item-container'>
       <img src={imageUrl} alt={`${name}`} />
-      <div className='item-details'>
-        <span className='name'>{name}</span>
+      <ItemDetails className='item-details'>
+        <Name className='name'>{name}</Name>
         <span className='price'>
           {quantity} x ${price}
         </span>
-      </div>
-    </div>)}
+      </ItemDetails>
+    </CartItemContainer>)}
     </div>
   )
 }

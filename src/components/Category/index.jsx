@@ -1,10 +1,9 @@
-import CategoryItem from '../Category-item'
-import './category.scss'
+import { CategoriesContainer } from './category.js'
 
 const Category = ({ categories }) => {
 
   return (
-    <CategoryItem categories={categories} className='categories-container'/>
+    <CategoriesContainer categories={categories}/>
   )
 }
 
