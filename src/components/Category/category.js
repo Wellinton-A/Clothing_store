@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import CategoryItem from "../Category-item";
+import CategoryItem from "../Category-item/index";
 
 export const CategoriesContainer = styled(CategoryItem)`
   width: 100%;
