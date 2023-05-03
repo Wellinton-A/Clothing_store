@@ -1,4 +1,5 @@
-import { CategoriesContainer } from './category.jsx'
+import CategoryItem from "../Category-item"
+
 
 const categories = [
   {
@@ -35,7 +36,7 @@ const categories = [
 
 const Category = () => {
   return (
-    <CategoriesContainer categories={categories}/>
+    <CategoryItem categories={categories}/>
   )
 }
 
