@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import CartItem from "../Cart-item"
+import CartItem from "../Cart-it"
 
 import { CartContext } from "../../context/cart-context"
 import { useNavigate } from "react-router-dom"

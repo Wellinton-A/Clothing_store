@@ -1,4 +1,4 @@
-import ProductCard from '../Product-card'
+import ProductCard from '../Product-c'
 
 import { CategoryPreviewContainer, Preview, Title, TitleLink } from './category-preview.js'
 

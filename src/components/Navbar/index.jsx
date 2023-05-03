@@ -5,7 +5,7 @@ import { userContext } from "../../context/user-context"
 import { CartContext } from "../../context/cart-context"
 import { signOutUser } from "../../utils/firebase/firebase.utils"
 
-import CardIcon from "../Cart-Icon"
+import CardIcon from "../Cart-Ic"
 import CartDropdown from "../Cart-dropdown"
 
 import {

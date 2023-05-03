@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Button, { BUTTON_TYPE } from '../Button';
 import SignUp from '../SignUp';
-import FormImput from '../Form-input';
+import FormImput from '../Form-inp';
 import { signInWithGooglePopup, signInAuthWithEmailAndPassword } from '../../utils/firebase/firebase.utils'
 
 import './sign-in.js'
