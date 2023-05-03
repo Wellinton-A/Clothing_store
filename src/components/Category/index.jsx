@@ -1,4 +1,4 @@
-import { CategoriesContainer } from './category.js'
+import { CategoriesContainer } from './category.jsx'
 
 const categories = [
   {
