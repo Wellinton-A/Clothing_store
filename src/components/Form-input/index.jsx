@@ -1,12 +1,12 @@
-import { FormImputLab, Group } from './form-input.js'
+import { FormImp, FormImputLabel, Group } from './form-input.js'
 
 const FormImput = ({ label, ...otherProps }) => {
 
   return (
     <Group>
-      <FormImputLab {...otherProps} />
+      <FormImp {...otherProps} />
       {label && (
-      <label className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}>{ label }</label>
+      <FormImputLabel shrink={otherProps.value.length}>{ label }</FormImputLabel>
       )}
     </Group>
   )

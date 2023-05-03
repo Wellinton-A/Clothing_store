@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-import { addCollectionAndDocument, getCollectionAndDocument } from "../../utils/firebase/firebase.utils.js";
+import { getCollectionAndDocument } from "../../utils/firebase/firebase.utils.js";
 
 export const CategoriesContext = createContext({
   categoriesMap: {},
@@ -18,9 +18,6 @@ const CategoriesProvider = (props) => {
     }
     getCategoryMap()
   }, [])
-
-  console.log(categoriesMap)
-
 
   return (
     <CategoriesContext.Provider value={{ categoriesMap }} > {props.children} </CategoriesContext.Provider>

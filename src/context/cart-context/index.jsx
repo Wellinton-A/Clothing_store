@@ -61,7 +61,6 @@ const CartProvider = ({children}) => {
   }
 
   const totalValueCart = cartList.reduce((total, obj) => {
-    console.log('passou aqui')
     return total + (obj.quantity * obj.price)
   },0)
 
