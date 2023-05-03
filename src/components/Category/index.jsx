@@ -1,5 +1,5 @@
 import CategoryItem from "../Category-item"
-
+import { CategoriesContainer } from "./category"
 
 const categories = [
   {
@@ -36,7 +36,9 @@ const categories = [
 
 const Category = () => {
   return (
-    <CategoryItem categories={categories}/>
+    <CategoriesContainer>
+      {categories.map((category) => <CategoryItem key={category.id} categories={category}/>)}
+    </CategoriesContainer>
   )
 }
 

@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const CategoriesContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`
+
 export const CategoryContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
