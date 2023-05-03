@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { BackgroundImage, CategoriesContainer, CategoryBodyContainer, CategoryItemContainer } from "./category-item"
 
-const CategoryItem = ({ categories, className }) => {
+const CategoryItem = ({ categories }) => {
   const navigate = useNavigate()
   return (
     <CategoriesContainer>
