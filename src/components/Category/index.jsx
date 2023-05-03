@@ -1,4 +1,5 @@
-import CategoryItem from "../Category-item"
+import CategoryItem from "../Directoty-item"
+
 import { CategoriesContainer } from "./category"
 
 const categories = [
