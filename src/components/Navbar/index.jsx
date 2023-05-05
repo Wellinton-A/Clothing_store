@@ -1,9 +1,10 @@
-import { useContext } from "react"
+import { useSelector } from "react-redux"
 
 import { ReactComponent as StoreLogo } from "../../assets/crown.svg"
-import { userContext } from "../../context/user-context"
-import { CartContext } from "../../context/cart-context"
 import { signOutUser } from "../../utils/firebase/firebase.utils"
+
+import { selectCurrentUser } from "../../store/user/user.selector"
+import { selectShowDropdown } from "../../store/cart/cart.selector"
 
 import CardIcon from "../Cart-Ic"
 import CartDropdown from "../Cart-dropdown"
@@ -17,8 +18,8 @@ import {
 } from "./nav-bar.js"
 
 const Navbar = () => {
-  const { currentUser } = useContext(userContext)
-  const { showDropdown } = useContext(CartContext)
+  const currentUser = useSelector(selectCurrentUser)
+  const showDropdown = useSelector(selectShowDropdown)
 
   return (
     <header>
