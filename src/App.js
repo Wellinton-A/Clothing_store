@@ -8,8 +8,8 @@ import SignInRoute from "./routes/signIn";
 import Shop from "./routes/shop";
 import CheckoutPage from "./routes/checkout";
 import { createUserDocumentFromAuth, getCollectionAndDocument, onAuthStateChangedListener } from "./utils/firebase/firebase.utils";
-import { setCurrentUser } from "./store/user/user.actions";
-import { setCategories } from "./store/category/category.actions";
+import { setCurrentUser } from "./store/user/user.reducer";
+import { setCategories } from "./store/category/category.reducer";
 
 import GlobalStyle, { Container } from "./style";
 

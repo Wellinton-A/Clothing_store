@@ -1,6 +1,7 @@
-import { compose, applyMiddleware, createStore } from "redux";
+// import { compose, applyMiddleware, createStore } from "redux";
 // import logger from "redux-logger";
 import { rootReducers } from "./root-reducer";
+import { configureStore } from '@reduxjs/toolkit'
 
 const loggerMiddleware = (store) => (next) => (action) => {
   if (!action.type) {
@@ -15,8 +16,17 @@ const loggerMiddleware = (store) => (next) => (action) => {
 
   console.log('nextState: ' , store.getState())
 }
-const middlewares = [loggerMiddleware]
 
-const composedEnhanced = compose(applyMiddleware(...middlewares))
+// const composedEnhancer = (process.env.NODE_ENV !== 'production' && window && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
 
-export const store = createStore(rootReducers, undefined, composedEnhanced)
+const middlewares = [process.env.NODE_ENV !== 'production' && loggerMiddleware]
+
+// const composedEnhanced = composedEnhancer(applyMiddleware(...middlewares))
+
+export const store = configureStore({
+  reducer: rootReducers,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false
+    }).concat(middlewares)
+})

@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 
 import { selectCartList, selectShowDropdown } from "../../store/cart/cart.selector"
-import { quantItemCart, setShowDropdown } from "../../store/cart/cart.actions"
+import { quantItemCart } from "../../store/cart/cart.actions"
+import { setShowDropdown } from "../../store/cart/cart.reducer"
 
 import { CartIconContainer, ItemCount, ShoppingIcon } from "./cart-icon"
 
